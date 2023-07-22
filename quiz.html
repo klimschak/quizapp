@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quizm</title>
     <link rel="stylesheet" href="quiz.css" />
-    <script src="script.js"></script>
+    <script src="quiz.js"></script>
 
     <!--Bootstrap inclusion-->
     <link
@@ -21,21 +21,50 @@
     ></script>
   </head>
 
-  <body>
+  <body onload="init()">
     <nav class="navbar navbar-light bg-light">
       <span class="navbar-brand mb-0 h1">Quizapp</span>
     </nav>
 
     <div class="card-container">
-      <div class="card" style="width: 18rem">
-        <img src="..." class="card-img-top" alt="..." />
+      <div class="card quiz-card">
+        <img src="./img/quiz_01.jpg" class="card-img-top" alt="..." />
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
+          <h5 class="card-title" id="question-text">Frage</h5>
           <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+           
+            <div class="card mb-2">
+              <div class="card-body" id="answer_1">
+                Antwort A
+              </div>
+            </div>
+
+            <div class="card mb-2">
+              <div class="card-body" id="answer_2">
+                Antwort B
+              </div>
+            </div> 
+
+            <div class="card mb-2">
+              <div class="card-body" id="answer_3">
+                Antwort C
+              </div>
+            </div>
+
+            <div class="card mb-2">
+              <div class="card-body" id="answer_4">
+                Antwort D
+              </div>
+            </div>
+
+            <div class="card-footer pt-4 pb-2 px-3 mt-4">
+              <span><b>1</b> von <b id="total_questions">5</b> Fragen</span>
+              <button class="btn btn-primary">Nächste Frage</button>
+
+            </div>
+
+
+
         </div>
       </div>
     </div>

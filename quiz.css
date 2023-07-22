@@ -6,3 +6,16 @@
     justify-content: center;
     align-items: center;
 }
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #797979;
+    padding-top: 16px !important;
+    background-color: #ffffff;
+}
+
+.quiz-card {
+    width: 30rem;
+}
