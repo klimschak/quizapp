@@ -31,3 +31,17 @@
      
     
 }
+
+.bg-success {
+    background-color: rgba(112, 241, 168, 0.522) !important;
+}
+
+.bg-danger {
+    background-color: #ff007785 !important;
+}
+
+
+.bg-success,
+.bg-danger {
+    color: #ffffff !important;
+}

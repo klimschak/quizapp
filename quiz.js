@@ -86,7 +86,7 @@ let questions = [
 let currentQuestion = 0;
 
 function init() {
-  setTotalQuestions();
+  setPagination();
   showQuestion();
   showAnswers();
 }
@@ -94,6 +94,7 @@ function init() {
 function showQuestion() {
   let question = questions[currentQuestion];
   document.getElementById("question-text").innerHTML = question["question"];
+  showAnswers()
 }
 
 function showAnswers() {
@@ -104,11 +105,16 @@ function showAnswers() {
   }
 }
 
-function setTotalQuestions() {
+function setPagination() {
   let length = questions.length;
   let total = document.getElementById("total_questions");
+  let pagination = document.getElementById("pagination");
   total.innerHTML = /*html*/ `
    ${length}
+   `;
+
+   pagination.innerHTML = /*html*/ `
+   ${currentQuestion+1}
    `;
 }
 
@@ -124,9 +130,35 @@ function answer(selection) {
 
   if (selectedQuestion == solution) {
     console.log('Antwort ist korrekt');
+    document.getElementById(selection).parentNode.classList.add('bg-success')
   }
   else {
     console.log('Antwort ist falsch');
+    document.getElementById(selection).parentNode.classList.add('bg-danger')
+    document.getElementById(`answer_${solution}`).parentNode.classList.add('bg-success')
   }
+
+  document.getElementById('next-button').disabled = false;
+}
+
+function nextQuestion(){
+  if (currentQuestion < questions.length-1) {
+    currentQuestion++; //Erhöhe um +1
+    showQuestion();
+    resetButtons()
+    setPagination();
+  }
+  else {
+    alert('Alle Fragen wurden beantwortet')
+  }
+  
+    
+  }
+ 
+function resetButtons(){
+  for (let i = 1; i < 5; i++) {
+   document.getElementById(`answer_${i}`).parentNode.classList.remove('bg-danger', 'bg-success')
+  }
+  document.getElementById('next-button').disabled = true;
 }
 
