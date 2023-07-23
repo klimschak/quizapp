@@ -13,9 +13,21 @@
     align-items: center;
     border-top: 1px solid #797979;
     padding-top: 16px !important;
-    background-color: #ffffff;
+    background-color: #ffffff !important;
 }
 
 .quiz-card {
     width: 30rem;
+}
+
+.card-question {
+    transition: 220ms;
+    cursor: pointer;
+}
+
+
+.card-question:hover {
+    background-color: #6692eb44;
+     
+    
 }
